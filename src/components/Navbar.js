@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./Navbar.css";
 import {
   Collapse,
@@ -14,11 +14,20 @@ import {
   Col
 } from "reactstrap";
 
-const Navbarr = props => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
-
+class Navbarr extends Component{
+    constructor(){
+        super();
+        this.state={
+            isOpen:false
+        }
+    }
+   toggle = () => {
+       this.setState({
+           isOpen:!this.state.isOpen
+       })
+   }
+    render(){
   return (
     <div>
       <Navbar color="dark" dark expand="md">
@@ -26,8 +35,8 @@ const Navbarr = props => {
         <NavbarBrand className="navbarbrand" href="/">
           Navigation
         </NavbarBrand>
-        <NavbarToggler className="text-white" onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarToggler className="text-white" onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="mr-auto text-white" navbar>
             <NavItem>
               <NavLink className="text-white" href="/">
@@ -95,6 +104,7 @@ const Navbarr = props => {
      
     </div>
   );
-};
+    }
+}
 
 export default Navbarr;
