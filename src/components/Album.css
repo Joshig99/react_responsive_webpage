@@ -1,0 +1,33 @@
+.album{
+    overflow: hidden;
+}
+.banner3{
+    background-color:rgb(79, 34, 202);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    height: 200px;
+}
+.albumimg{
+    padding: 0 !important;
+  
+}
+.jumb{
+    padding:0 !important;
+    margin: 0 !important;
+    border-radius:0 !important;
+}
+@media screen and (min-width:768px){
+    .imgres{
+        height: 200px;
+    }
+}
+@media screen and (min-width:1025px){
+    .imgres{
+        height: 300px;
+    }
+    .banner3{
+        height: 300px;
+    }
+}
